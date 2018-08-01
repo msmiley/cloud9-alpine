@@ -2,7 +2,7 @@ FROM alpine:3.8
 
 #############################
 # Alpine APKs dependencies
-RUN apk update && apk --no-cache add -U git curl python tmux bash make gcc g++ ca-certificates wget linux-headers binutils-gold nodejs nodejs-npm && update-ca-certificates
+RUN apk update && apk --no-cache add -U git curl python bash make gcc g++ ca-certificates wget linux-headers binutils-gold nodejs nodejs-npm && update-ca-certificates
 
 #############################
 # Cloud9 IDE
