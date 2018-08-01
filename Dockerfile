@@ -1,8 +1,8 @@
-FROM alpine:3.6
+FROM alpine:3.8
 
 #############################
 # Alpine APKs dependencies
-RUN apk update && apk --no-cache add -U git curl python tmux bash make gcc g++ ca-certificates wget linux-headers binutils-gold && update-ca-certificates
+RUN apk update && apk --no-cache add -U git curl python tmux bash make gcc g++ ca-certificates wget linux-headers binutils-gold nodejs nodejs-npm && update-ca-certificates
 
 #############################
 # Cloud9 IDE
@@ -20,8 +20,6 @@ RUN git clone git://github.com/c9/core.git c9sdk \
   && sed -i "s/\/c9\/install/\/msmiley\/install/" ./scripts/install-sdk.sh \
   && ./scripts/install-sdk.sh \
   && ln -s /c9sdk/bin/c9 /usr/bin/c9
-
-RUN apk add -U nodejs nodejs-npm
 
 # start cloud9 with no authentication by default
 # if authentication is desired, set the value of -a, i.e. -a user:pass at the end of the docker run line
