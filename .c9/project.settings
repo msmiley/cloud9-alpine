@@ -3,7 +3,7 @@
         "@guessTabSize": "true",
         "@newLineMode": "unix",
         "@tabSize": 2,
-        "@useSoftTabs": false
+        "@useSoftTabs": true
     },
     "build": {
         "@builder": "auto",

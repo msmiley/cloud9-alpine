@@ -1,8 +1,8 @@
-FROM alpine:3.9
+FROM alpine:3.11
 
 #############################
 # Alpine APKs dependencies
-RUN apk update && apk --no-cache add -U git curl python bash make gcc g++ ca-certificates wget linux-headers binutils-gold nodejs nodejs-npm && update-ca-certificates
+RUN apk update && apk --no-cache add -U git curl python bash make gcc g++ ca-certificates wget linux-headers binutils-gold nodejs nodejs-npm openssh docker && update-ca-certificates
 
 #############################
 # Cloud9 IDE
@@ -19,7 +19,8 @@ RUN git clone git://github.com/c9/core.git c9sdk \
   && cd c9sdk \
   && sed -i "s/\/c9\/install/\/msmiley\/install/" ./scripts/install-sdk.sh \
   && ./scripts/install-sdk.sh \
-  && ln -s /c9sdk/bin/c9 /usr/bin/c9
+  && ln -s /c9sdk/bin/c9 /usr/bin/c9 \
+  && sed -i "s/node-pty-prebuilt/node-pty-prebuilt-multiarch/" /c9sdk/plugins/node_modules/vfs-local/localfs.js
 
 # start cloud9 with no authentication by default
 # if authentication is desired, set the value of -a, i.e. -a user:pass at the end of the docker run line

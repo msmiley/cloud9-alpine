@@ -22,7 +22,7 @@
         "@showGutter": true,
         "@showInvisibles": false,
         "@showPrintMargin": "true",
-        "@theme": "ace/theme/cloud9_day",
+        "@theme": "plugins/c9.ide.theme.jett/ace.themes/jett",
         "@useWrapMode": true,
         "@wrapBehavioursEnabled": true,
         "@wrapToView": "true",
@@ -79,7 +79,7 @@
         "@preview-navigate": false,
         "@preview-tree": false,
         "@revealfile": true,
-        "@skin": "flat-light",
+        "@skin": "jett-dark",
         "@treestyle": "alternative"
     },
     "imgeditor": {
@@ -148,7 +148,7 @@
     },
     "metadata": {
         "@enabled": "true",
-        "@undolimit": "500"
+        "@undolimit": "1000"
     },
     "mount": {
         "@grandfathered-shown": false
