@@ -1,6 +1,6 @@
 {
     "ace": {
-        "@guessTabSize": "true",
+        "@guessTabSize": "false",
         "@newLineMode": "unix",
         "@tabSize": 2,
         "@useSoftTabs": true
