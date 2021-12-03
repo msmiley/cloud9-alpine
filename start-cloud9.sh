@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ ! -d ~/.c9 ]]
+if [[ ! -f ~/.c9/node/bin/node ]]
 then
   echo "copying .c9 folder"
   cp -r /c9/.c9 ~
