@@ -12,7 +12,6 @@ EXPOSE 8181 8080 8081 8082
 
 # add in some nice Cloud9 default settings
 RUN mkdir -p /c9
-COPY user.settings /c9/.c9/
 
 # install cloud9
 RUN git clone git://github.com/c9/core.git c9sdk \
@@ -23,5 +22,7 @@ RUN git clone git://github.com/c9/core.git c9sdk \
   && ln -s /c9sdk/bin/c9 /usr/bin/c9 \
   && sed -i "s/node-pty-prebuilt/node-pty-prebuilt-multiarch/" /c9sdk/plugins/node_modules/vfs-local/localfs.js
 
+COPY user.settings /c9/.c9/
+COPY project.settings /c9/.c9/
 COPY start-cloud9.sh /
 ENTRYPOINT ["bash", "./start-cloud9.sh"]
